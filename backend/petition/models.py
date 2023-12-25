@@ -16,21 +16,10 @@ class Petition(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20)
     target_signatures = models.PositiveIntegerField()
-    current_signatures = models.PositiveIntegerField()
+    is_petition = models.BooleanField()
     
-class Article(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    author = models.CharField(max_length=100)
-    publication_date = models.DateTimeField(auto_now_add=True)
 
 class Signature(models.Model):
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     signature_date = models.DateTimeField(auto_now_add=True)
-
-class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    content = models.TextField()
-    comment_date = models.DateTimeField(auto_now_add=True)
