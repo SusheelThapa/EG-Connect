@@ -1,5 +1,5 @@
 const App = () => {
-  return <>Hello EG-Connect</>;
+  return <h1 className="underline text-5xl">Hello EG-Connect</h1>;
 };
 
 export default App;
