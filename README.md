@@ -62,3 +62,13 @@ We welcome contributions to improve the E-Petition and Feedback System. To contr
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code for your own projects.
 
 Thank you for using and contributing to the E-Petition and Feedback System! Together, let's build a more participatory and transparent society.
+
+## 👨 Authors 👨
+
+💻 [Susheel Thapa](https://github.com/SusheelThapa)
+
+💻 [Rajendra Khanal](https://github.com/Rajendrakhanal)
+
+💻 [Saurav Kumar Mahato](https://github.com/SauravKumarMahato)
+
+💻 [Sandesh Pyakurel](https://github.com/Sandesh-Pyakurel)
