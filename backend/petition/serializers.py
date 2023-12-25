@@ -20,3 +20,8 @@ class PetitionSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['is_petition'] = True
         return Petition.objects.create(**validated_data)
+
+class SignatureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Signature
+        fields = ['id', 'petition', 'user']
