@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import User, Petition, Signature
-from .serializers import UserSerializer, PetitionSerializer
+from .serializers import UserSerializer, PetitionSerializer, SignatureSerializer
 # Create your views here.
 
 class UserAPIView(APIView):
@@ -33,10 +33,6 @@ class PetitionAPIView(APIView):
 
 
 class SignatureAPIView(APIView):
-    def get(self, request):
-        signatures = Signature.objects.all()
-        serializer = SignatureSerializer(signatures, many=True)
-        return Response(serializer.data)
 
     def post(self, request):
         serializer = SignatureSerializer(data=request.data)
