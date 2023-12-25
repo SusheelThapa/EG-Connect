@@ -1,14 +1,14 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import User, Petition, Article, Signature, Comment
-from .serializers import UserSerializer, PetitionSerializer, ArticleSerializer, SignatureSerializer, CommentSerializer
+from .models import User, Petition, Signature
+from .serializers import UserSerializer, PetitionSerializer
 # Create your views here.
 
 class UserAPIView(APIView):
     def get(self, request):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        user = User.objects.get(id = request.user.id)
+        serializer = UserSerializer(user)
         return Response(serializer.data)
 
     def post(self, request):
@@ -20,7 +20,7 @@ class UserAPIView(APIView):
 
 class PetitionAPIView(APIView):
     def get(self, request):
-        petitions = Petition.objects.all()
+        petitions = Petition.objects.filter(is_petition = True)
         serializer = PetitionSerializer(petitions, many=True)
         return Response(serializer.data)
 
