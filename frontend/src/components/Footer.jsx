@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
@@ -14,8 +10,7 @@ const Footer = () => {
         <div>
           <div className="text-lg">
             <Link to={`/`}>
-              <span className="text-green-500">EG</span>
-              {" "}
+              <span className="text-green-500">EG</span>{" "}
               <span className="text-white	bold underline decoration-green-500">
                 Connect
               </span>
