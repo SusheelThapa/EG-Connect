@@ -19,6 +19,22 @@ function App() {
           }
         />
         <Route
+          path="/policies"
+          element={
+            <>
+              <HomePage active_feature="policies" />
+            </>
+          }
+        />
+        <Route
+          path="/petition"
+          element={
+            <>
+              <HomePage active_feature="petition" />
+            </>
+          }
+        />
+        <Route
           path="/notices"
           element={
             <>
