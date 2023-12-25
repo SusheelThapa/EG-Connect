@@ -1,5 +1,10 @@
+import LandingPage from "./components/LandingPage";
+import ParticleAnimation from "./components/common/ParticleAnimation";
+
+import particleAnimationConfig from "./json/particles.json"
+
 const App = () => {
-  return <h1 className="underline text-5xl">Hello EG-Connect</h1>;
+  return<><ParticleAnimation config={particleAnimationConfig}/><LandingPage /></>;
 };
 
 export default App;
