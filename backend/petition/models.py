@@ -16,6 +16,9 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     registration_date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self) -> str:
+        return self.username
+
 class Petition(models.Model):
    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -26,6 +29,11 @@ class Petition(models.Model):
     target_signatures = models.PositiveIntegerField()
     is_petition = models.BooleanField()
     tags = models.ManyToManyField('Tag')
+
+    def __str__(self) -> str:
+        return self.title
+
+
     
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
