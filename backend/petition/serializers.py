@@ -11,17 +11,7 @@ class PetitionSerializer(serializers.ModelSerializer):
         model = Petition
         fields = '__all__'
 
-class ArticleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Article
-        fields = '__all__'
-
 class SignatureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Signature
-        fields = '__all__'
-
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
         fields = '__all__'
