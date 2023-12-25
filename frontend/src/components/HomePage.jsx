@@ -4,6 +4,7 @@ import Header from "./Header";
 
 import PolicyContent from "./Policy";
 import PetitionContent from "./Petition";
+import PropTypes from "prop-types";
 
 const HomePage = ({ active_feature }) => {
   const features = ["policies", "petition", "notices"];
@@ -17,6 +18,10 @@ const HomePage = ({ active_feature }) => {
       <Footer />
     </>
   );
+};
+
+HomePage.propTypes = {
+  active_feature: PropTypes.string.isRequired,
 };
 
 export default HomePage;
