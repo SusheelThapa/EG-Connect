@@ -33,7 +33,6 @@ class Petition(models.Model):
     def __str__(self) -> str:
         return self.title
 
-
     
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
