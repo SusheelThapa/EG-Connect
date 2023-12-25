@@ -19,10 +19,10 @@ function App() {
           }
         />
         <Route
-          path="/homepage"
+          path="/notices"
           element={
             <>
-              <HomePage />
+              <HomePage active_feature="notices" />
             </>
           }
         />

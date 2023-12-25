@@ -19,7 +19,7 @@ const NoticeTable = () => {
   ];
 
   return (
-    <div className="overflow-x-auto mt-4 mx-48 mb-10 ">
+    <div className="overflow-x-auto mt-10 mx-48 mb-10 rounded-lg">
       <table className="min-w-full bg-white">
         <thead className="bg-gray-800 text-white text-xl">
           <tr>
