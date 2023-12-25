@@ -1,18 +1,16 @@
 import Footer from "./Footer";
+import Notice from "./Notice";
 import Header from "./Header";
-import Body from "./Body";
 
 import { useState } from "react";
 
-const HomePage = () => {
-
-  const [showPetitionContent, setShowPetitionContent] = useState(false)
-
+const HomePage = ({ active_feature }) => {
+  const features = ["policies", "petition", "notices"];
 
   return (
     <>
-      <Header setShowPetitionContent={setShowPetitionContent} />
-      <Body showPetitionContent={showPetitionContent} />
+      <Header active_feature={active_feature} feature={features} />
+      {active_feature === features[2] && <Notice />}
       <Footer />
     </>
   );

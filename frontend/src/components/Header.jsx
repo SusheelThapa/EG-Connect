@@ -1,4 +1,5 @@
 import image from "../img/EG-Connect.png";
+
 import { Link } from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,9 @@ const Header = ({ setShowPetitionContent }) => {
     // Call the function passed from HomePage to toggle the visibility of the petition content
     setShowPetitionContent((prev) => !prev);
   };
+
+
+import logo from "../img/logo.png";
 
 
   return (
@@ -182,6 +186,7 @@ const Header = ({ setShowPetitionContent }) => {
           </div>
         </nav>
       </div>
+
     </>
   );
 };
