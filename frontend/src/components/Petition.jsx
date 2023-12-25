@@ -1,12 +1,23 @@
+import { useEffect, useState } from "react";
 import PetitionCard from "./common/PetitionCard";
 
+import { getPetition } from "../api/petition";
+
 const PetitionContent = () => {
+  const [petitions, setPetitions] = useState([]);
+  useEffect(() => {
+    getPetition().then((response) => {
+      console.log(response);
+      setPetitions(response);
+    });
+    return () => {};
+  }, []);
+
   return (
     <div className="mx-48">
       <div className="grid grid-cols-2 gap-4">
-        {/* <!-- Add more rows as needed --> */}
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
-          return <PetitionCard key={index} />;
+        {petitions.map((petition) => {
+          return <PetitionCard key={petition.id} petition={petition} />;
         })}
       </div>
     </div>

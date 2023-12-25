@@ -78,7 +78,7 @@ const Header = ({ active_feature, features }) => {
 
 // Add PropTypes validation
 Header.propTypes = {
-  features: PropTypes.string.isRequired,
+  features: PropTypes.array.isRequired,
   active_feature: PropTypes.string.isRequired,
 };
 
