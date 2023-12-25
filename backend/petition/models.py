@@ -42,3 +42,12 @@ class Signature(models.Model):
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     signature_date = models.DateTimeField(auto_now_add=True)
+
+
+class Notice(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    creation_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
