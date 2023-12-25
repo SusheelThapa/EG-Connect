@@ -78,7 +78,8 @@ const Header = ({ active_feature, features }) => {
 
 // Add PropTypes validation
 Header.propTypes = {
-  setShowPetitionContent: PropTypes.func.isRequired,
+  features: PropTypes.string.isRequired,
+  active_feature: PropTypes.string.isRequired,
 };
 
 export default Header;
