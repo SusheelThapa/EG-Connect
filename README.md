@@ -1,4 +1,45 @@
-# EG-Connect
+<p>
+    <h1 align="center">EG-Connect</h1>
+    <p align="center">
+        <img
+             src=""alt="Logo of EG-Connect"
+         />
+    <p align="center">
+    <strong>  </strong>
+    </p>
+</p>
+
+<p align="center">
+    <a href="#">
+    <img
+        src="https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc"
+    />
+    </a>
+</p>
+
+<p align="center">
+    <a href=""
+    target="blank" >
+    <img
+        src=""
+        alt="github-profile-readme-generator license"
+    />
+    </a>
+    <a href="https://github.com/Rajendrakhanal/vsus/fork" target="blank">
+    <img
+        src="https://img.shields.io/github/forks/Rajendrakhanal/vsus?style=for-the-badge&logo=appveyor"
+        alt="github-profile-readme-generator forks"
+    />
+    </a>
+    <a
+    href="https://github.com/Rajendrakhanal/vsusstargazers" target="blank"
+    >
+    <img
+        src="https://img.shields.io/github/stars/Rajendrakhanal/vsus?style=for-the-badge&logo=appveyor"
+        alt="github-profile-readme-generator stars"
+    />
+    </a>
+</p>
 
 ## Table of Contents
 
