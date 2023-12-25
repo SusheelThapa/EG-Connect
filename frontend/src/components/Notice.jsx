@@ -1,23 +1,15 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { getNotices } from "../api/notices";
 
 const NoticeTable = () => {
-  const notices = [
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-  ];
+  const [notices, setNotices] = useState([]);
 
+  useEffect(() => {
+    getNotices().then((response) => {
+      setNotices(response);
+    });
+    return () => {};
+  },[]);
   return (
     <div className="overflow-x-auto mt-10 mx-48 mb-10 rounded-lg">
       <table className="min-w-full bg-white">
