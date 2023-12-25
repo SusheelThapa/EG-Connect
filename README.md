@@ -1,4 +1,4 @@
-# E-Petition and Feedback System
+# EG-Connect
 
 ## Table of Contents
 
@@ -27,11 +27,8 @@ Welcome to the EG-connect! This system allows the public to submit and vote on p
 - Government officials can upload proposed policies for public review and feedback.
 - Policies can be categorized, and summaries can be provided for better understanding.
 
-### 4. Feedback System
-- Citizens can provide feedback on government policies.
-- Comments and suggestions can be submitted to facilitate constructive discussions.
 
-### 5. User Authentication
+### 4. User Authentication
 - Secure user authentication system to ensure the integrity of the voting and feedback process.
 - Encrypted user data for privacy protection.
 
