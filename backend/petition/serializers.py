@@ -14,4 +14,9 @@ class UserSerializer(serializers.ModelSerializer):
 class PetitionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Petition
-        fields = ['id', 'user', 'title', 'description', 'creation_date', 'status', 'target_signatures']
+        fields = ['id', 'user', 'title', 'description', 'creation_date', 'status', 'target_signatures','is_petition']
+        extra_kwargs = {'is_petition':{'read_only': True}}
+
+    def create(self, validated_data):
+        validated_data['is_petition'] = True
+        return Petition.objects.create(**validated_data)
