@@ -17,7 +17,11 @@ class Petition(models.Model):
     status = models.CharField(max_length=20)
     target_signatures = models.PositiveIntegerField()
     is_petition = models.BooleanField()
+    tags = models.ManyToManyField('Tag')
     
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
 
 class Signature(models.Model):
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE)
