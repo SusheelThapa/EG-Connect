@@ -26,3 +26,6 @@ yarn-error.log*
 # custom
 .env
 .vite/
+
+# python
+.venv/
