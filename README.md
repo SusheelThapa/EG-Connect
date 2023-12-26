@@ -9,37 +9,6 @@
     </p>
 </p>
 
-<p align="center">
-    <a href="#">
-    <img
-        src="https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc"
-    />
-    </a>
-</p>
-
-<p align="center">
-    <a href=""
-    target="blank" >
-    <img
-        src=""
-        alt="github-profile-readme-generator license"
-    />
-    </a>
-    <a href="https://github.com/Rajendrakhanal/vsus/fork" target="blank">
-    <img
-        src="https://img.shields.io/github/forks/Rajendrakhanal/vsus?style=for-the-badge&logo=appveyor"
-        alt="github-profile-readme-generator forks"
-    />
-    </a>
-    <a
-    href="https://github.com/Rajendrakhanal/vsusstargazers" target="blank"
-    >
-    <img
-        src="https://img.shields.io/github/stars/Rajendrakhanal/vsus?style=for-the-badge&logo=appveyor"
-        alt="github-profile-readme-generator stars"
-    />
-    </a>
-</p>
 
 ## Table of Contents
 
@@ -52,7 +21,7 @@
 
 ## Introduction
 
-Welcome to the EG-connect! This system allows the public to submit and vote on petitions, as well as provide feedback on policies uploaded by the government. It serves as a platform for citizens to actively participate in the decision-making process, fostering a more inclusive and democratic society.
+In response to the evolving dynamics of our digital society, EG-Connect emerges as a transformative force, heralding a new era of civic engagement. This visionary project goes beyond conventional platforms, aiming to cultivate a vibrant and informed citizenry. By providing a space for citizens to articulate their concerns, cast votes on pertinent issues, and contribute to the policymaking dialogue, the system becomes a cornerstone of a participatory democracy. It endeavors to not only enhance transparency but also fortify the very essence of accountability, creating a virtual agora where the collective voice of the people resonates. In essence, the EG-Connect is more than a technological marvel; it is a societal catalyst propelling us toward a future where the intersection of technology and governance ushers in a more interconnected, responsive, and egalitarian democracy.
 
 ## Features
 
@@ -74,8 +43,8 @@ Welcome to the EG-connect! This system allows the public to submit and vote on p
 - Encrypted user data for privacy protection.
 
 
-<!-- ## Installation -->
-<!-- ## More to write after completion of project -->
+## Installation 
+<!-- <!-- ## More to write after completion of project -->
 
 
 ## Usage
