@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const PetitionCard = ({ detail, isLogin }) => {
   return (
-    <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+    <div className="border border-solid shadow-xl rounded-3xl p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
       {/* TAG IMPLEMENTED  */}
       <div className="flex gap-2">
         {/* loop here for many tags */}
@@ -13,12 +13,17 @@ const PetitionCard = ({ detail, isLogin }) => {
           <div>dkfkd</div>
         </div>
       </div>
-      <p className="text-xl font-times  mb-4">{detail.title}</p>
-      <p className="text-sm font-times  mb-4">{detail.description.slice(0,200)}</p>
+      <p className="text-2xl font-times  mb-4">{detail.title}</p>
+      <p className="text-base font-times  mb-4">
+        {detail.description.slice(0, 200)}
+      </p>
       <div className="grid justify-start rounded-full w-40 bg-green-500 h-5"></div>
       <div>
         <div className="text-sm text-left italic mt-1">
-          <span className="font-semibold text-blue-600">12345</span> Votes
+          <span className="font-semibold text-blue-600">
+            {Math.floor(Math.random() * 100000)}
+          </span>{" "}
+          Votes
           <div className="grid justify-end">
             <button className="rounded-lg bg-green-400 border border-solid px-6 py-2 ">
               {isLogin ? (
