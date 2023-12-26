@@ -39,7 +39,7 @@ const LandingPage = () => {
         ></span>
         .
       </div>
-      <Link to="/policies">
+      <Link to="/login">
         <button className="rounded-[15px] bg-green-500 m-6 py-3 px-4 text-3xl font-semibold  font-family-poppins tracking-wider hover:bg-teal-700">
           Get Started
         </button>

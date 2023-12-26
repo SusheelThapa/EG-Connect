@@ -1,7 +1,7 @@
 import tagImage from "../../img/tag.png";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const PetitionCard = ({detail}) => {
+const PetitionCard = ({ detail }) => {
   return (
     <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
       {/* TAG IMPLEMENTED  */}
@@ -12,9 +12,7 @@ const PetitionCard = ({detail}) => {
           <div>dkfkd</div>
         </div>
       </div>
-      <p className="text-xl font-times  mb-4">
-        {detail.title}
-      </p>
+      <p className="text-xl font-times  mb-4">{detail.title}</p>
       <div className="grid justify-start rounded-full w-40 bg-green-500 h-5"></div>
       <div>
         <div className="text-sm text-left italic mt-1">
