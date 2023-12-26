@@ -33,6 +33,9 @@ class Petition(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Signature(models.Model):
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE)
