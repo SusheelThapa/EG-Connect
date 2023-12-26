@@ -51,6 +51,7 @@ class UserProfileView(APIView):
 
 
 class PetitionAPIView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         petitions = Petition.objects.filter(is_petition = True)
         serializer = PetitionSerializer(petitions, many=True)
@@ -67,6 +68,7 @@ class PetitionAPIView(APIView):
 
 
 class PoliciesAPIView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         petitions = Petition.objects.filter(is_petition = False)
         serializer = PoliciesSerializer(petitions, many=True)
@@ -83,7 +85,7 @@ class PoliciesAPIView(APIView):
     
 
 class SignatureAPIView(APIView):
-
+    permission_classes = [IsAuthenticated]
     def post(self, request):
         serializer = SignatureSerializer(data=request.data)
         if serializer.is_valid():
@@ -92,6 +94,7 @@ class SignatureAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class NoticeAPIView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         notices = Notice.objects.all()
         serializer = NoticeSerializer(notices, many=True)
