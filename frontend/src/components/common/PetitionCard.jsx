@@ -1,8 +1,9 @@
 import tagImage from "../../img/tag.png";
+import PropTypes from 'prop-types';
 
 const PetitionCard = ({detail}) => {
   return (
-    <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col hover:scale-105 hover:duration-1000 transition-duration-1000">
+    <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
       {/* TAG IMPLEMENTED  */}
       <div className="flex gap-2">
         {/* loop here for many tags */}
@@ -27,6 +28,11 @@ const PetitionCard = ({detail}) => {
       </div>
     </div>
   );
+};
+
+// Add PropTypes validation
+PetitionCard.propTypes = {
+  detail: PropTypes.object.isRequired,
 };
 
 export default PetitionCard;
