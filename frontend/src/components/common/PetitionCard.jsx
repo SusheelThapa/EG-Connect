@@ -1,7 +1,8 @@
 import tagImage from "../../img/tag.png";
 import PropTypes from "prop-types";
+import Button from "./Button";
 
-const PetitionCard = ({ detail }) => {
+const PetitionCard = ({ detail, isLogin }) => {
   return (
     <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
       {/* TAG IMPLEMENTED  */}
@@ -19,7 +20,17 @@ const PetitionCard = ({ detail }) => {
           <span className="font-semibold text-blue-600">12345</span> Votes
           <div className="grid justify-end">
             <button className="rounded-lg bg-green-400 border border-solid px-6 py-2 ">
-              <span className="font-semibold">Vote</span>
+              {isLogin ? (
+                <span className="font-semibold">Vote</span>
+              ) : (
+                <Button
+                  buttonText={"Sign In"}
+                  css={
+                    "bg-blue-500  text-white text-lg py-3 px-4 rounded-md hover:bg-blue-600 w-full shadow-lg transition duration-150 ease-in-out"
+                  }
+                  handleOnClick={() => {}}
+                />
+              )}
             </button>
           </div>
         </div>
