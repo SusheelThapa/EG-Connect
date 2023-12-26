@@ -52,9 +52,17 @@ function App() {
         />
         <Route
           path="/signup"
-        element={
-          <>
+          element={
+            <>
               <HomePage active_feature="signup" />
+            </>
+          }
+        />
+        <Route
+          path="/petitionform"
+          element={
+            <>
+              <HomePage active_feature="petitionform" />
             </>
           }
         />
