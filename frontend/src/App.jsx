@@ -42,6 +42,14 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/login"
+          element={
+            <>
+              <HomePage active_feature="login" />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );

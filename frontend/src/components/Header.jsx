@@ -16,7 +16,7 @@ const Header = ({ active_feature, features }) => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="">
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-48 py-4">
             <Link to="/" className="flex items-center ">
