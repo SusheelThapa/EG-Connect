@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from .renderers import UserRenderer
+from .AIchecker import petition_checker
 # Create your views here.
 
 def get_tokens_for_user(user):
@@ -59,6 +60,11 @@ class PetitionAPIView(APIView):
     def post(self, request):
         serializer = PetitionSerializer(data=request.data)
         if serializer.is_valid():
+            res = petition_checker(serializer.validated_data['description'])
+            if res:
+               serializer.validated_data['status'] = "approved"
+            else:
+               serializer.validated_data['status'] = "rejected"
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
