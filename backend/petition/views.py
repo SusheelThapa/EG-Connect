@@ -17,6 +17,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from .renderers import UserRenderer
 
+from .AIfilter import petition_checker
+
 
 # Utility function to generate JWT tokens for a user
 
@@ -88,6 +90,11 @@ class PetitionAPIView(APIView):
     def post(self, request):
         serializer = PetitionSerializer(data=request.data)
         if serializer.is_valid():
+            res = petition_checker(serializer.validated_data['description'])
+            if res:
+               serializer.validated_data['status'] = "approved"
+            else:
+               serializer.validated_data['status'] = "rejected"
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
