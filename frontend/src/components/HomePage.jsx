@@ -6,9 +6,10 @@ import PolicyContent from "./Policy";
 import PetitionContent from "./Petition";
 import PropTypes from "prop-types";
 import Login from "./Login";
+import SignUp from "./Signup";
 
 const HomePage = ({ active_feature }) => {
-  const features = ["policies", "petition", "notices", "login"];
+  const features = ["policies", "petition", "notices", "login", "signup"];
 
   return (
     <>
@@ -17,6 +18,7 @@ const HomePage = ({ active_feature }) => {
       {active_feature === features[1] && <PetitionContent />}
       {active_feature === features[2] && <Notice />}
       {active_feature === features[3] && <Login />}
+      {active_feature === features[4] && <SignUp />}
       <Footer />
     </>
   );

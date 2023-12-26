@@ -50,6 +50,14 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/signup"
+        element={
+          <>
+              <HomePage active_feature="signup" />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );

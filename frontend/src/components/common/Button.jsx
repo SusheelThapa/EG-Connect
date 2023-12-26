@@ -6,7 +6,7 @@ const Button = ({ buttonText, css, handleOnClick }) => {
         handleOnClick(e);
       }}
     >
-     {buttonText}
+      {buttonText}
     </button>
   );
 };
