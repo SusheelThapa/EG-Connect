@@ -43,6 +43,14 @@ function App() {
           }
         />
         <Route
+          path="/notices/:id"
+          element={
+            <>
+              <HomePage active_feature="notices" />
+            </>
+          }
+        />
+        <Route
           path="/login"
           element={
             <>
@@ -52,9 +60,17 @@ function App() {
         />
         <Route
           path="/signup"
-        element={
-          <>
+          element={
+            <>
               <HomePage active_feature="signup" />
+            </>
+          }
+        />
+        <Route
+          path="/petitionform"
+          element={
+            <>
+              <HomePage active_feature="petitionform" />
             </>
           }
         />
