@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="bg-black">
-      <div className="bg-black h-20 flex justify-between items-center mx-64 text-white">
+      <div className="bg-black h-20 flex justify-between items-center mx-48 text-white">
         <div>
           <div className="text-lg">
             <Link to={`/`}>
