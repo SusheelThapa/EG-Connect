@@ -3,7 +3,7 @@ import PetitionCard from "./common/PetitionCard";
 
 import { getPetition } from "../api/petition";
 
-const PetitionContent = ({isLogin}) => {
+const PetitionContent = ({ isLogin }) => {
   const [petitions, setPetitions] = useState([]);
   useEffect(() => {
     getPetition().then((response) => {
@@ -14,10 +14,16 @@ const PetitionContent = ({isLogin}) => {
   }, []);
 
   return (
-    <div className="mx-48">
+    <div className="mx-48 my-10">
       <div className="grid grid-cols-2 gap-4">
         {petitions.map((petition) => {
-          return <PetitionCard key={petition.id} detail={petition} isLogin={isLogin} />;
+          return (
+            <PetitionCard
+              key={petition.id}
+              detail={petition}
+              isLogin={isLogin}
+            />
+          );
         })}
       </div>
     </div>
