@@ -52,7 +52,7 @@ class UserProfileView(APIView):
 
 class PetitionAPIView(APIView):
     def get(self, request):
-        petitions = Petition.objects.filter(is_petition = True)
+        petitions = Petition.objects.filter(is_petition = True, status = "approved")
         serializer = PetitionSerializer(petitions, many=True)
         return Response(serializer.data)
 
@@ -68,7 +68,7 @@ class PetitionAPIView(APIView):
 
 class PoliciesAPIView(APIView):
     def get(self, request):
-        petitions = Petition.objects.filter(is_petition = False)
+        petitions = Petition.objects.filter(is_petition = False, status = "approved")
         serializer = PoliciesSerializer(petitions, many=True)
         return Response(serializer.data)
 
