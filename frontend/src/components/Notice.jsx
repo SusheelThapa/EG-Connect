@@ -1,23 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { getNotices } from "../api/notices";
+
+import Button from "./common/Button";
 
 const NoticeTable = () => {
-  const notices = [
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-    { id: 1, title: "BE I,II,III & IV year I part (RB) - 2080 Bhadra" },
-    { id: 2, title: "BCE IV year I part (RB) - 2080 Bhadra" },
-  ];
+  const [notices, setNotices] = useState([]);
 
+  useEffect(() => {
+    getNotices().then((response) => {
+      setNotices(response);
+    });
+    return () => {};
+  }, []);
   return (
     <div className="overflow-x-auto mt-10 mx-48 mb-10 rounded-lg">
       <table className="min-w-full bg-white">
@@ -43,12 +37,13 @@ const NoticeTable = () => {
               <td className="py-2 px-4 text-left">{index + 1}</td>
               <td className="py-2 px-4 text-left">{notice.title}</td>
               <td className="py-2 px-4 text-right">
-                <button
-                  className="text-green-600 text-right font-semibold py-2 px-4 border border-green-500 hover:text-white hover:border-transparent hover:bg-green-400 rounded-lg"
-                  onClick={() => alert("Viewing notice: " + notice.title)}
-                >
-                  View Notice
-                </button>
+                <Button
+                  buttonText={"View Notice"}
+                  css={
+                    "text-green-600 text-right font-semibold py-2 px-4 border border-green-500 hover:text-white hover:border-transparent hover:bg-green-400 rounded-lg"
+                  }
+                  handleOnClick={() => alert("Viewing notice: " + notice.title)}
+                />
               </td>
             </tr>
           ))}

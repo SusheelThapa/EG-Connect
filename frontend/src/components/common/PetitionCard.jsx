@@ -1,6 +1,6 @@
 import tagImage from "../../img/tag.png";
 
-const PetitionCard = () => {
+const PetitionCard = ({detail}) => {
   return (
     <div className="border border-solid shadow-xl rounded-lg p-8 mx-10 my-3 flex flex-col hover:scale-105 hover:duration-1000 transition-duration-1000">
       {/* TAG IMPLEMENTED  */}
@@ -12,9 +12,7 @@ const PetitionCard = () => {
         </div>
       </div>
       <p className="text-xl font-times  mb-4">
-        Hello world To position the button at the bottom right corner within
-        your div, you can use the flex utility classes along with justify-end
-        and items-end. Heres an updated version of your code:
+        {detail.title}
       </p>
       <div className="grid justify-start rounded-full w-40 bg-green-500 h-5"></div>
       <div>

@@ -1,12 +1,23 @@
+import { getPolicy } from "../api/policy";
 import PetitionCard from "./common/PetitionCard";
+import { useEffect, useState } from "react";
 
 const PolicyContent = () => {
+  const [policies, setPolicies] = useState([]);
+
+  useEffect(() => {
+    getPolicy().then((response) => {
+      console.log(response);
+      setPolicies(response);
+    });
+    return () => {};
+  }, []);
+
   return (
     <div className="mx-48">
       <div className="grid grid-cols-2 gap-4">
-        {/* <!-- Add more rows as needed --> */}
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => {
-          return <PetitionCard key={index} />;
+        {policies.map((policy) => {
+          return <PetitionCard key={policy.id} detail={policy} />;
         })}
       </div>
     </div>

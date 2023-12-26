@@ -2,11 +2,11 @@ const Button = ({ buttonText, css, handleOnClick }) => {
   return (
     <button
       className={css}
-      onClick={() => {
-        handleOnClick();
+      onClick={(e) => {
+        handleOnClick(e);
       }}
     >
-      View Notice
+      {buttonText}
     </button>
   );
 };
