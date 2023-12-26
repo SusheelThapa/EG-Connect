@@ -1,11 +1,20 @@
 import { useState } from "react";
 import Button from "./common/Button";
 
+/**
+ * @function AddPetitionForm
+ * @description Form component for adding new petitions. It includes fields for title,
+ * description, and a selection of tags.
+ *
+ * @returns {JSX.Element} - The form for adding new petitions.
+ */
 const AddPetitionForm = () => {
+  // State hooks for form fields: title, description, and tags
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
 
+  // Predefined list of available tags for selection
   const availableTags = [
     "Environment",
     "Human Rights",
@@ -14,20 +23,24 @@ const AddPetitionForm = () => {
     "Education",
   ];
 
+  // Function to handle tag selection, toggling the inclusion of a tag
   const handleTagSelection = (tag) => {
     if (tags.includes(tag)) {
-      setTags(tags.filter((t) => t !== tag));
+      setTags(tags.filter((t) => t !== tag)); // Remove the tag if already selected
     } else {
       setTags([...tags, tag]);
     }
   };
-
+  // Function to handle form submission
   const handleSubmit = (e) => {
+    // Prevent default form submission behavior
     e.preventDefault();
-    // Submit logic goes here
+
+    // TODO: Logic to submit the form data goes here
     console.log({ title, description, tags });
   };
 
+  // Rendering the form
   return (
     <div className="flex justify-center items-center bg-gray-100">
       <div className="my-20 p-8 bg-white shadow-lg rounded-xl max-w-lg w-full">

@@ -1,17 +1,30 @@
 import { useEffect, useState } from "react";
 import { getNotices } from "../api/notices";
-
 import Button from "./common/Button";
 
+/**
+ * @function NoticeTable
+ * @description Component for displaying a table of notices.
+ * Fetches notice data from an API and displays it in a tabular format.
+ *
+ * @returns {JSX.Element} - A table displaying a list of notices with view buttons.
+ */
 const NoticeTable = () => {
+  // State hook for storing notice data
   const [notices, setNotices] = useState([]);
 
+  // useEffect hook to fetch notice data when the component mounts
   useEffect(() => {
+    // Fetching notice data from the API
     getNotices().then((response) => {
+      // Setting the fetched notices in the state
       setNotices(response);
     });
+    // Cleanup function - currently empty as there's no side effect that needs cleanup
     return () => {};
   }, []);
+
+  // Rendering the notice table
   return (
     <div className="overflow-x-auto mt-10 mx-48 mb-10 rounded-lg">
       <table className="min-w-full bg-white">
@@ -29,6 +42,7 @@ const NoticeTable = () => {
           </tr>
         </thead>
         <tbody className="text-gray-700">
+          {/* Mapping over the notices state to render each notice in a table row */}
           {notices.map((notice, index) => (
             <tr
               key={notice.id}

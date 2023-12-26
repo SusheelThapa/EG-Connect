@@ -1,11 +1,23 @@
 import { useRef, useEffect } from "react";
-import Typed from "typed.js";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
+// Importing Typed.js for text animation
+import Typed from "typed.js";
+
+/**
+ * @function LandingPage
+ * @description Component for the landing page of the application.
+ * It features dynamic text animations and a link to the login page.
+ *
+ * @returns {JSX.Element} - The landing page component.
+ */
 const LandingPage = () => {
+  // useRef hook to reference the element where the Typed.js animation will be applied
   const typed_text = useRef(null);
 
+  // useEffect hook to initialize the Typed.js animation when the component mounts
   useEffect(() => {
+    // Initializing Typed.js with various options like strings, speed, looping, etc.
     const typed = new Typed(typed_text.current, {
       strings: ["ABCDE", "FGHIJ", "KLMNO"],
       startDelay: 300,
@@ -18,6 +30,7 @@ const LandingPage = () => {
       shuffle: true,
     });
 
+    // Cleanup function to destroy Typed.js instance when component unmounts
     return () => {
       typed.destroy();
     };

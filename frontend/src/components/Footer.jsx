@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+/**
+ * @function Footer
+ * @description Component for the footer section of the application.
+ * It includes the site title, copyright information, and links to social media.
+ *
+ * @returns {JSX.Element} - The footer component.
+ */
 const Footer = () => {
   return (
     <div className="bg-black">

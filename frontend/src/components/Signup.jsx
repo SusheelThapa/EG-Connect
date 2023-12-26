@@ -2,25 +2,42 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "./common/Button";
 
+/**
+ * @function SignUp
+ * @description Component for user sign-up. It captures username, email, and password,
+ * performs basic validation, and handles the sign-up process.
+ *
+ * @returns {JSX.Element} - The sign-up form component.
+ */
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Function to check if any field is empty
   const isFieldEmpty = () => {
     return !username.trim() || !email.trim() || !password.trim();
   };
+
+  // Function to handle form submission
   const handleSubmit = (event) => {
+    // Prevent default form submission behavior
     event.preventDefault();
+
+    // Check if any field is empty and set an error message if so
     if (isFieldEmpty()) {
       setError("All fields are required.");
       return;
     }
+
+    // Clear any existing error messages
     setError("");
-    //API Call
+
+    // TODO: API call for sign-up would go here
   };
 
+  // Rendering the sign-up form
   return (
     <div className=" flex justify-center items-center bg-gray-100">
       <div className="my-32 p-8 bg-white shadow-lg rounded-3xl max-w-md w-full">
@@ -100,6 +117,7 @@ const SignUp = () => {
   );
 };
 
+// PropTypes validation
 SignUp.propTypes = {
   onSignUp: PropTypes.func.isRequired,
 };
