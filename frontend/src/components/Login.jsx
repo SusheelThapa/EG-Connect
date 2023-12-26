@@ -1,20 +1,31 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import Button from "./common/Button";
+import { login } from "../api/login";
 
-const Login = ({ onLogin }) => {
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!username.trim() || !password) {
-      setError("Please enter both username and password.");
-      return;
+
+    const data = { username: username, password: password };
+    login(data).then(({ token }) => {
+      console.log(token);
+      Cookies.set("access_token", token.access);
+      Cookies.set("isLogin", true);
+      Cookies.set("username", username);
+    });
+    if (Cookies.get("isLogin")) {
+      return navigate("/policies");
     }
-    setError("");
-    onLogin(username.trim(), password);
+    return navigate("/login");
   };
 
   return (
@@ -75,10 +86,6 @@ const Login = ({ onLogin }) => {
       </div>
     </div>
   );
-};
-
-Login.propTypes = {
-  onLogin: PropTypes.func.isRequired,
 };
 
 export default Login;

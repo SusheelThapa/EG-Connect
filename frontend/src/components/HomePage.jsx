@@ -10,6 +10,8 @@ import SignUp from "./Signup";
 import AddPetitionForm from "./AddPetitionForm";
 import NoticePage from "./NoticePage";
 
+import Cookies from "js-cookie";
+
 const HomePage = ({ active_feature }) => {
   const features = [
     "policies",
@@ -21,16 +23,67 @@ const HomePage = ({ active_feature }) => {
     "notice",
   ];
 
+  const isLogin = Cookies.get("isLogin");
+  const access_token = Cookies.get("access_token");
+  const username = Cookies.get("username");
+
   return (
     <>
-      <Header active_feature={active_feature} features={features} />
-      {active_feature === features[0] && <PolicyContent />}
-      {active_feature === features[1] && <PetitionContent />}
-      {active_feature === features[2] && <Notices />}
-      {active_feature === features[3] && <Login />}
-      {active_feature === features[4] && <SignUp />}
-      {active_feature === features[5] && <AddPetitionForm />}
-      {active_feature === features[6] && <NoticePage />}
+      <Header
+        active_feature={active_feature}
+        features={features}
+        isLogin={isLogin}
+        username={username}
+      />
+      {active_feature === features[0] && (
+        <PolicyContent
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[1] && (
+        <PetitionContent
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[2] && (
+        <Notices
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[3] && (
+        <Login
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[4] && (
+        <SignUp
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[5] && (
+        <AddPetitionForm
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
+      {active_feature === features[6] && (
+        <NoticePage
+          isLogin={isLogin}
+          access_token={access_token}
+          username={username}
+        />
+      )}
       <Footer />
     </>
   );
