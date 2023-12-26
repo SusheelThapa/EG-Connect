@@ -14,6 +14,7 @@ const PetitionCard = ({ detail, isLogin }) => {
         </div>
       </div>
       <p className="text-xl font-times  mb-4">{detail.title}</p>
+      <p className="text-sm font-times  mb-4">{detail.description.slice(0,200)}</p>
       <div className="grid justify-start rounded-full w-40 bg-green-500 h-5"></div>
       <div>
         <div className="text-sm text-left italic mt-1">
