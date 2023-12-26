@@ -43,6 +43,14 @@ function App() {
           }
         />
         <Route
+          path="/notices/:id"
+          element={
+            <>
+              <HomePage active_feature="notices" />
+            </>
+          }
+        />
+        <Route
           path="/login"
           element={
             <>
