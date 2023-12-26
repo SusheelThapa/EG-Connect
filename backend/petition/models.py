@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 # Create your models here.
@@ -10,14 +11,9 @@ STATUS_CHOICES = [
         ('rejected', 'Rejected'),
     ]
 
-class User(models.Model):
-    username = models.CharField(max_length=100)
-    email = models.EmailField()
-    password = models.CharField(max_length=100)
-    registration_date = models.DateTimeField(auto_now_add=True)
+class User(AbstractUser):
+    pass
 
-    def __str__(self) -> str:
-        return self.username
 
 class Petition(models.Model):
    
