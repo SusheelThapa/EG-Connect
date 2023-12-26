@@ -1,10 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import LandingPage from "./components/LandingPage";
 import ParticleAnimation from "./components/common/ParticleAnimation";
-
-import particleAnimationConfig from "./json/particles.json";
 import HomePage from "./components/HomePage";
 
+// Configuration for the particle animation
+import particleAnimationConfig from "./json/particles.json";
+
+/**
+ * @function App
+ * @description Main application component that sets up routing using React Router.
+ * It defines different routes and the components that should be rendered for each route.
+ *
+ * @returns {JSX.Element} The routing setup for the application.
+ */
 function App() {
   return (
     <Router>

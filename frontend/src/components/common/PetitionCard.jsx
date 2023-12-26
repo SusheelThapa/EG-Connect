@@ -1,13 +1,25 @@
-import tagImage from "../../img/tag.png";
 import PropTypes from "prop-types";
+
 import Button from "./Button";
 
+import tagImage from "../../img/tag.png";
+
+/**
+ * @component PetitionCard
+ * @description A card component to display petition information.
+ * Represents a single petition with details and voting options.
+ *
+ * @param {Object} props - The props for the PetitionCard component.
+ * @param {Object} props.detail - Detail of the petition, including id, title, description, etc.
+ * @param {boolean} props.isLogin - Boolean value indicating if the user is logged in.
+ *
+ * @returns {JSX.Element} - A styled card component displaying petition details.
+ */
 const PetitionCard = ({ detail, isLogin }) => {
   return (
+    // Card container with styling and hover effect
     <div className="border border-solid shadow-xl rounded-3xl p-8 mx-10 my-3 flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-      {/* TAG IMPLEMENTED  */}
       <div className="flex gap-2">
-        {/* loop here for many tags */}
         <div className="flex gap-1 mt-2 mb-2">
           <img src={tagImage} className="h-4 w-4 " alt="Tag Icon" />
           <div>dkfkd</div>
@@ -45,9 +57,10 @@ const PetitionCard = ({ detail, isLogin }) => {
   );
 };
 
-// Add PropTypes validation
+/* PropType validation to ensure correct prop types are passed to the component*/
 PetitionCard.propTypes = {
   detail: PropTypes.object.isRequired,
+  isLogin: PropTypes.bool,
 };
 
 export default PetitionCard;
