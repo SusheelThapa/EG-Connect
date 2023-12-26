@@ -19,7 +19,7 @@ const LandingPage = () => {
   useEffect(() => {
     // Initializing Typed.js with various options like strings, speed, looping, etc.
     const typed = new Typed(typed_text.current, {
-      strings: ["ABCDE", "FGHIJ", "KLMNO"],
+      strings: ["COUNTRY", "GOVERNMENT", "PUBLIC"],
       startDelay: 300,
       typeSpeed: 100,
       backSpeed: 100,
@@ -45,7 +45,7 @@ const LandingPage = () => {
         </span>
       </h1>
       <div className="text-4xl  mb-5">
-        Transforming Nation with{" "}
+        VOICE IN THE {" "}
         <span
           className="text-orange-500 underline bold"
           ref={typed_text}

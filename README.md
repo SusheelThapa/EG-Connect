@@ -2,13 +2,12 @@
     <h1 align="center">EG-Connect</h1>
     <p align="center">
         <img
-             src=""alt="Logo of EG-Connect"
+             src="https://github.com/SusheelThapa/EG-Connect/assets/83917129/f7fa0bdc-c27a-473a-9df3-ab590e791ba4" alt="Logo of EG-Connect"
          />
     <p align="center">
     <strong>  </strong>
     </p>
 </p>
-
 
 ## Table of Contents
 
@@ -26,26 +25,94 @@ In response to the evolving dynamics of our digital society, EG-Connect emerges 
 ## Features
 
 ### 1. Petition Submission
+
 - Users can submit petitions on various issues.
 - Petitions can include detailed descriptions, supporting documents, and relevant tags.
 
 ### 2. Petition Voting
+
 - Public can vote on petitions to express support for specific issues.
 - The system tracks and displays the number of votes for each petition.
 
 ### 3. Government Policy Upload
+
 - Government officials can upload proposed policies for public review and feedback.
 - Policies can be categorized, and summaries can be provided for better understanding.
 
-
 ### 4. User Authentication
+
 - Secure user authentication system to ensure the integrity of the voting and feedback process.
 - Encrypted user data for privacy protection.
 
+## Installation
 
-## Installation 
-<!-- <!-- ## More to write after completion of project -->
+### Cloning the repository
 
+- First of all, clone the repository as
+
+  ```shell
+  https://github.com/SusheelThapa/EG-Connect.git
+  ```
+
+### Frontend
+
+#### Moving to frontend folder
+
+    ```shell
+    cd frontend/
+    ```
+
+#### Installation node packages
+
+    ```shell
+    cd yarn
+    yarn
+    ```
+
+#### Running the project
+
+    ```shell
+    yarn run dev
+    ```
+
+### Backend
+
+#### Moving to backend folder
+
+    ```shell
+    cd backend
+    ```
+
+#### Creating virtual environment
+
+    ```shell
+    python3 -m venv .venv
+    ```
+
+#### Activate the virtual environment
+
+    ```shell
+    source .venv/bin/activate
+    ```
+
+#### Installing required python packages
+
+    ```shell
+    pip3 install -r requirements.txt
+    ```
+
+#### Making migrations
+
+    ```shell
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+    ```
+
+#### Running the server
+
+    ```shell
+    python3 manage.py runserver
+    ```
 
 ## Usage
 
