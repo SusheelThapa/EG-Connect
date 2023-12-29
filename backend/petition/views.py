@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import User, Petition, Signature, Notice
+from .models import User, Petition, Signature, Notice, Tag
 from .serializers import (
     UserRegisterationSerializer,
     PetitionSerializer,
@@ -11,6 +11,7 @@ from .serializers import (
     NoticeSerializer,
     UserLoginSerializer,
     UserProfileSerializer,
+    TagViewSeializer,
 )
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -143,3 +144,12 @@ class NoticeAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TagAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        tags = Tag.objects.all()
+        serializer = TagViewSeializer(tags, many=True)
+        return Response(serializer.data)

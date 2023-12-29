@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Petition, Signature, Notice
+from .models import User, Petition, Signature, Notice, Tag
 
 
 # Serializer for User Registration
@@ -34,6 +34,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 # Serializer for Petitions
 class PetitionSerializer(serializers.ModelSerializer):
+    tags = serializers.PrimaryKeyRelatedField(queryset = Tag.objects.all(), many=True)
     class Meta:
         model = Petition
         fields = [
@@ -45,12 +46,16 @@ class PetitionSerializer(serializers.ModelSerializer):
             "status",
             "target_signatures",
             "is_petition",
+            "tags"
         ]
         extra_kwargs = {"is_petition": {"read_only": True}, "status":{"read_only":True}}
 
     def create(self, validated_data):
         validated_data["is_petition"] = True
-        return Petition.objects.create(**validated_data)
+        tags_data = validated_data.pop('tags')
+        petition =  Petition.objects.create(**validated_data)
+        petition.tags.set(tags_data)
+        return petition
 
 
 # Serializer for Policies (treated as Petitions with 'is_petition' False)
@@ -87,3 +92,9 @@ class NoticeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notice
         fields = ["id", "title", "description", "creation_date"]
+
+
+class TagViewSeializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ["id", "name"]

@@ -9,4 +9,5 @@ urlpatterns = [
     path('api/signature/', views.SignatureAPIView.as_view(), name='signature'),
     path('api/policies/', views.PoliciesAPIView.as_view(), name='policy-list'),
     path('api/notices/', views.NoticeAPIView.as_view(), name='notice-list'),
+    path('api/tags/', views.TagAPIView.as_view(), name='tag'),
 ]
