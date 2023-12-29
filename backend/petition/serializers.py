@@ -46,7 +46,7 @@ class PetitionSerializer(serializers.ModelSerializer):
             "target_signatures",
             "is_petition",
         ]
-        extra_kwargs = {"is_petition": {"read_only": True}}
+        extra_kwargs = {"is_petition": {"read_only": True}, "status":{"read_only":True}}
 
     def create(self, validated_data):
         validated_data["is_petition"] = True
